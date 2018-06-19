@@ -76,7 +76,7 @@ html,body{
   color: #ccc;
 }
 .lt_aside .nav .child a {
-  padding-left: 50px;
+  padding-left: 30px;
   /*  */
 }
 
@@ -111,4 +111,11 @@ html,body{
 }
 .breadcrumb a:hover {
     color: #23527c;
+}
+
+/* 对所有的table */
+.table.table-bordered th,
+.table.table-bordered td{
+  text-align: center;/*水平居中对齐*/
+  vertical-align: middle;/*垂直对齐，不知道行高*/
 }
