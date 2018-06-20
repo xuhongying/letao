@@ -233,7 +233,7 @@ $("form").on('success.form.bv', function (e) {
   $.ajax({
     type: 'post',
     url: '/product/addProduct',
-    data: ,
+  
     success: function (info) {
       if (info.success) {
         //关闭模态框
