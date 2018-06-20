@@ -4,6 +4,10 @@
   padding: 0;
   list-style: none;
 }
+img{
+  display: block;
+  width: 100%;
+}
 html,body{
   height: 100%;
 }
@@ -12,11 +16,12 @@ html,body{
   height: 100%;
   max-width: 640px;
   min-width: 320px;
-  background-color: pink;
+  /* //background-color: #fff; */
   margin: 0 auto;
   position: relative;
-  padding-top:45px;
-  padding-bottom:55px;
+  padding-top:45px;/*放header*/
+  padding-bottom:55px;/*放footer*/
+  
 }
 .lt_header{
   width: 100%;

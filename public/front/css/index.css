@@ -1,0 +1,29 @@
+.nav{
+  padding: 10px;
+ /* // background-color: #fff; */
+}
+.nav li{
+  float: left;
+  width: 33.33%;
+}
+.lt_product{
+  padding: 10px;
+}
+.lt_product a{
+  float: left;
+  width: 48%;/*为了让一排的两个a中间有间隙*/
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  text-align: center;
+  margin-bottom:10px;
+}
+.lt_product a:nth-child(even){
+  margin-left: 4%;
+}
+.lt_product a .price{
+  color: red
+}
+.lt_product a .oldPrice{
+ text-decoration: line-through
+}
