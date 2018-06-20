@@ -1,0 +1,83 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html,body{
+  height: 100%;
+}
+.lt_container{
+  width: 100%;
+  height: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  background-color: pink;
+  margin: 0 auto;
+  position: relative;
+  padding-top:45px;
+  padding-bottom:55px;
+}
+.lt_header{
+  width: 100%;
+  height: 45px;
+  background-color: #069;
+  position: absolute;
+  top:0;
+}
+.lt_header .icon-left,
+.lt_header .icon-right{
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: 0;
+  line-height: 45px;
+  text-align: center;
+  color: #fff;
+}
+.lt_header .icon-left{
+  left: 0;
+}
+.lt_header .icon-right{
+  right:0;
+}
+.lt_header h4{
+  text-align: center;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  font-weight: 400;
+  margin: 0;/*用mui插件，h4自带了margin-top，margin-bottom*/
+}
+.lt_footer{
+  width: 100%;
+  height: 55px;
+  background-color: #069;
+  position: absolute;
+ bottom:0;
+}
+.lt_footer li{
+  float: left;
+  width: 25%;
+  text-align: center;
+padding-top:8px;
+}
+.lt_footer li a{
+  width: 100%;
+  height: 100%;
+  color:#fff;
+}
+.lt_footer li a p{/*因为mui框架给p设置了颜色，所以p不会继承父元素的元素，要单独给p设置样式*/
+  color:#fff;
+}
+.lt_footer li.now a{
+  color:darkorange;
+}
+.lt_footer li.now a p{
+  color:darkorange;
+}
+.lt_content{
+  width: 100%;
+  height: 100%;
+  position: relative;/*因为mui框架的滚动区域，要相对父容器定位，所以要给定位*/
+}

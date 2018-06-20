@@ -179,7 +179,8 @@
     <!-- /.modal-dialog -->
   </div>
   <!-- /.modal -->
-
+  
+<!-- 动态渲染整个表格 -->
   <script type='text/html' id='tpl'>
     {{each rows v i}}
     <tr>
@@ -191,6 +192,7 @@
       </tr>
      {{/each}}
   </script>
+  <!-- 动态渲染添加框内的一级商品 -->
 <script type="text/html" id = 'tpl2' >
   {{each rows v i}}
     <li >

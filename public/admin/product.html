@@ -77,9 +77,12 @@
           <thead>
             <tr>
               <th width='10%'>序号</th>
-              <th width='30%'>一级分类名称</th>
-              <th width='30%'>二级分类名称</th>
-              <th width='30%'>二级分类LOGO</th>
+              <th width='25%'>商品名称</th>
+              <th width='25%'>商品描述</th>
+              <th width='10%'>商品库存</th>
+              <th width='10%'>商品尺寸</th>
+              <th width='10%'>商品状态</th>
+              <th width='10%'>操作</th>
             </tr>
           </thead>
           <tbody>
@@ -89,7 +92,7 @@
         </table>
         <!-- 分页 -->
         <div class='text-right'>
-          <ul id='pagintor'></ul>
+          <ul id='paginator'></ul>
         </div>
       </div>
 
@@ -124,7 +127,7 @@
 
   <!-- 添加模态框 js插件  模态框 -->
   <div class="modal fade" id="addModal">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog ">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
@@ -134,13 +137,15 @@
           <div class="modal-body">
 
             <div class="form-group">
-                <input type="hidden" name="categoryId">
-                <!-- 因为hot是必传的，就写死了1 -->
-                <input type="hidden" name="hot" value="1">
+               <!-- 目的：把选择的二级分类的id发送到后端 -->
+               
+                <!-- 因为statu是必传的，就写死了1 -->
+                <input type="hidden" name="statu" value="1">
                 
                 <div class="dropdown">
+                    <input type="hidden" name="brandId">
                   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                    <span class='dropdown_text'>请选择一级分类</span>
+                    <span class='dropdown_text'>请选择二级分类</span>
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" >
@@ -149,7 +154,23 @@
                 </div>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" name="brandName" placeholder="请输入二级分类的名称">
+                <input type="text" class="form-control" name="proName" placeholder="请输入商品的名称">
+             </div>
+             <div class="form-group">
+               <textarea class="form-control" cols="30" rows="3" name = 'proDesc'  placeholder="请输入商品的描述"></textarea>
+
+             </div>
+             <div class="form-group">
+                <input type="text" class="form-control" name="num" placeholder="请输入商品的库存">
+             </div>
+             <div class="form-group">
+                <input type="text" class="form-control" name="size" placeholder="请输入商品的尺码（32-50）">
+             </div>
+             <div class="form-group">
+                <input type="text" class="form-control" name="oldPrice" placeholder="请输入商品的原价">
+             </div>
+             <div class="form-group">
+                <input type="text" class="form-control" name="price" placeholder="请输入商品的现价">
              </div>
              <!-- 上传按钮 -->
              <div class="form-group">
@@ -157,12 +178,15 @@
                 <label for="fileupload" class = 'btn btn-default' >上传图片</label>
                 <!-- name: 上传图片的name属性，后端通过name属性获取到文件 -->
               <!-- data-url: 指定后端的地址 -->
-                <input type="file" id = 'fileupload' class="hidden" name = 'pic1' data-url = '/category/addSecondCategoryPic' >
+                <input type="file" id = 'fileupload' class="hidden" name = 'pic1' data-url = '/product/addProductPic' >
               </div>
               <div class="form-group">
                 <div class = 'img_box'>
-                    <img src="images/none.png" width = '100' alt="">
-                    <input type="hidden" name="brandLogo">
+                    <!-- <img src="images/none.png" width = '100' alt=""> -->
+
+                    <!-- 表单校验 -->
+                <!-- 通过name属性把图片提交到后台了 -->
+                    <input type="hidden" name="tips">
                 </div>
               </div>
             <div class="modal-footer">
@@ -177,22 +201,27 @@
     <!-- /.modal-dialog -->
   </div>
   <!-- /.modal -->
-
+<!-- 动态渲染整个表格 -->
   <script type='text/html' id='tpl'>
     {{each rows v i}}
     <tr>
         <td>{{(page-1) * size + i+1 }}</td>
-        <td>{{v.categoryName}}</td>
-        <td>{{v.brandName}}</td>
-        <td><img width="50" height="50" src="{{v.brandLogo}}" alt=""></td>
-          </tr>
+        <td>{{v.proName}}</td>
+        <td>{{v.proDesc}}</td>
+        <td>{{v.num}}</td>
+        <td>{{v.size}}</td>
+        <td>{{v.statu ==1?'上架':'下架'}}</td>
+        <td>
+          <button class = 'btn btn-danger btn-sm' >下架</button>
+        </td>
       </tr>
      {{/each}}
   </script>
+  <!-- 动态渲染添加模态框内的二级商品 -->
 <script type="text/html" id = 'tpl2' >
   {{each rows v i}}
     <li >
-      <a data-id = '{{v.id}}' tabindex="-1" href="#">{{v.categoryName}}</a>
+      <a data-id = '{{v.id}}' tabindex="-1" href="#">{{v.brandName}}</a>
     </li>
    {{/each}}
 </script>
