@@ -80,7 +80,7 @@ $(function () {
         pageSize:100
       },
       success:function (info) { 
-        console.log(info);
+        //console.log(info);
         $('.dropdown-menu').html( template('tpl2',info));
        }
     })
@@ -96,7 +96,7 @@ $('.dropdown-menu').on('click','a',function () {
   $('[name="brandId"]').val(id);
   //手动让brandId通过
   // $("form").data("bootstrapValidator").updateStatus("brandId", "VALID");
-  //$("form").data("bootstrapValidator").updateStatus("brandId", "VALID");//必须等表单校验成功了才可以手动更改校验成功
+  $("form").data("bootstrapValidator").updateStatus("brandId", "VALID");//必须等表单校验成功了才可以手动更改校验成功
  })
 
 
@@ -229,11 +229,15 @@ $('form').bootstrapValidator({
 $("form").on('success.form.bv', function (e) {
   //表单注册成功阻止页面跳转
   e.preventDefault();
+  var param = $('form').serialize();
+  param +='&picName1='+imgs[0].picName +'&picAddr='+imgs[0].picAddr;
+  param +='&picName2='+imgs[1].picName +'&picAddr='+imgs[1].picAddr;
+  param +='&picName3='+imgs[2].picName +'&picAddr='+imgs[2].picAddr;
   //使用ajax提交逻辑
   $.ajax({
     type: 'post',
     url: '/product/addProduct',
-  
+    data:param,
     success: function (info) {
       if (info.success) {
         //关闭模态框
