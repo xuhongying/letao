@@ -14,7 +14,7 @@
 <body>
   <div class="lt_container">
       <div class="lt_header">
-          <a class = 'icon-left' href="index.html" ><span class = 'fa fa-home' ></span></a>
+          <a class = 'icon-left' href="javascript:history.go(-1);" ><span class = 'mui-icon mui-icon-back' ></span></a>
           <div class = 'title' >
             <h4>乐淘云购</h4>
           </div>
@@ -27,39 +27,7 @@
               <div class="mui-scroll">
                   <!--这里放置真实显示的DOM内容-->
                   <ul>
-                    <li class='now'>
-                      <a href="javascript:;">运动馆</a>
-                    </li>
-                    <li>
-                      <a href="javascript:;">运动馆</a>
-                    </li>
-                    <li>
-                      <a href="javascript:;">运动馆</a>
-                    </li>
-                    <li>
-                      <a href="javascript:;">运动馆</a>
-                    </li>
-                    <li>
-                      <a href="javascript:;">运动馆</a>
-                    </li>
-                    <li>
-                      <a href="javascript:;">运动馆</a>
-                    </li>
-                    <li>
-                      <a href="javascript:;">运动馆</a>
-                    </li>
-                    <li>
-                      <a href="javascript:;">运动馆</a>
-                    </li>
-                    <li>
-                      <a href="javascript:;">运动馆</a>
-                    </li>
-                    <li>
-                      <a href="javascript:;">运动馆</a>
-                    </li>
-                    <li>
-                      <a href="javascript:;">运动馆</a>
-                    </li>
+                   <!-- 坑 -->
                 </ul>
            
         
@@ -72,48 +40,8 @@
               <div class="mui-scroll">
           <!--这里放置真实显示的DOM内容-->
              <ul class = 'mui-clearfix'>
-               <li>
-                 <a href="#">
-                   <img src="images/brand1.png" alt="">
-                  <p>耐克</p>
-                </a>
-              </li>
-              <li>
-                  <a href="#">
-                    <img src="images/brand1.png" alt="">
-                   <p>耐克</p>
-                 </a>
-               </li>
-               <li>
-                  <a href="#">
-                    <img src="images/brand1.png" alt="">
-                   <p>耐克</p>
-                 </a>
-               </li>
-               <li>
-                  <a href="#">
-                    <img src="images/brand1.png" alt="">
-                   <p>耐克</p>
-                 </a>
-               </li>
-               <li>
-                  <a href="#">
-                    <img src="images/brand1.png" alt="">
-                   <p>耐克</p>
-                 </a>
-               </li>
-               <li>
-                  <a href="#">
-                    <img src="images/brand1.png" alt="">
-                   <p>耐克</p>
-                 </a>
-               </li>
-               <li>
-                  <a href="#">
-                    <img src="images/brand1.png" alt="">
-                   <p>耐克</p>
-                 </a>
-               </li>
+              <!-- 坑 -->
+            
              </ul>
              
         
@@ -152,8 +80,23 @@
        </ul>
      </div>
   </div>
-
-
+<script type='text/html' id = 'firstTpl' >
+  {{each rows v i}}
+  <li class= {{i == 0 ? "now" : ""}} data-id = {{v.id}}  >
+      <a href="javascript:;">{{v.categoryName}}</a>
+    </li>
+    {{/each}}
+</script>
+<script type = 'text/html' id = 'secondTpl' >
+  {{each rows v i}}
+  <li>
+      <a href="#">
+        <img src="images/brand1.png" alt="">
+       <p>耐克</p>
+     </a>
+   </li>
+{{/each}}
+</script>
  <script src = 'lib/mui/js/mui.js' ></script>
  <script src = 'lib/artTemplate/template-web.js' ></script>
  <script  src = 'lib/zepto/zepto.min.js'></script>
