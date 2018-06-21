@@ -82,7 +82,7 @@
   </div>
 <script type='text/html' id = 'firstTpl' >
   {{each rows v i}}
-  <li class= {{i == 0 ? "now" : ""}} data-id = {{v.id}}  >
+  <li class= '{{i == 0 ? "now" : ""}}' data-id = '{{v.id}}' >
       <a href="javascript:;">{{v.categoryName}}</a>
     </li>
     {{/each}}
