@@ -88,11 +88,14 @@
     {{/each}}
 </script>
 <script type = 'text/html' id = 'secondTpl' >
+  {{if rows.length == 0}}
+  <p>该分类下没有更多的商品信息</p>
+  {{/if}}
   {{each rows v i}}
   <li>
       <a href="#">
-        <img src="images/brand1.png" alt="">
-       <p>耐克</p>
+        <img src="{{v.brandLogo}}" alt="">
+       <p>{{v.brandName}}</p>
      </a>
    </li>
 {{/each}}
