@@ -84,5 +84,6 @@ padding-top:8px;
 .lt_content{
   width: 100%;
   height: 100%;
+  background-color: #fff;
   position: relative;/*因为mui框架的滚动区域，要相对父容器定位，所以要给定位*/
 }
