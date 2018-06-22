@@ -87,3 +87,26 @@ padding-top:8px;
   background-color: #fff;
   position: relative;/*因为mui框架的滚动区域，要相对父容器定位，所以要给定位*/
 }
+
+/* 搜索框公共样式 */
+.lt_search{
+  padding:10px;
+  position: relative;
+}
+.lt_search input{
+  width: 100%;
+  height: 34px;
+  line-height: 34px;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  padding-left: 10px;
+  border: 1px solid #007aff;
+}
+.lt_search button{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color:#fff;
+  border-radius: 0 3px 3px 0;
+}
