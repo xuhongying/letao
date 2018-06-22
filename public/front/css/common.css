@@ -88,6 +88,29 @@ padding-top:8px;
   position: relative;/*因为mui框架的滚动区域，要相对父容器定位，所以要给定位*/
 }
 
+/* 商品详情 公共样式 */
+.lt_product{
+  padding: 10px;
+}
+.lt_product a{
+  float: left;
+  width: 48%;/*为了让一排的两个a中间有间隙*/
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  text-align: center;
+  margin-bottom:10px;
+}
+.lt_product a:nth-child(even){
+  margin-left: 4%;
+}
+.lt_product a .price{
+  color: red
+}
+.lt_product a .oldPrice{
+ text-decoration: line-through
+}
+
 /* 搜索框公共样式 */
 .lt_search{
   padding:10px;
@@ -110,3 +133,4 @@ padding-top:8px;
   color:#fff;
   border-radius: 0 3px 3px 0;
 }
+

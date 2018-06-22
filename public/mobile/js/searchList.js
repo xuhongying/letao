@@ -175,7 +175,7 @@ $(function () {
       url: "/product/queryProduct",
       data: param,
       success: function (info) {
-
+          console.log(info);
         setTimeout(function () {
           $(".lt_product").html(template("tpl", info));
         }, 1000);
