@@ -23,3 +23,6 @@ border: 1px dashed red;
     .lt_history .content ul li span{
       line-height: 30px;
     }
+    .lt_history a{
+      width: 80%;
+    }

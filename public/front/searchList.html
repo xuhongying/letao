@@ -40,13 +40,13 @@
                     <span class = 'fa fa-angle-down'></span>
                     </a>
                 </li>
-                <li>
+                <li data-type = 'price'>
                     <a href="javascript:;">
                     价格
                     <span class = 'fa fa-angle-down'></span>
                     </a>
                 </li>
-                <li>
+                <li data-type = 'num' >
                     <a href="javascript:;">
                     库存
                     <span class = 'fa fa-angle-down'></span>
@@ -104,7 +104,7 @@
     {{each data v i}}
   <a href="#">
       <img src="{{v.pic[0].picAddr}}" alt=""> 
-      <p class = 'mui-ellipsis-2 proNam'>{{v.proName}} </p>  
+      <p class = 'mui-ellipsis-2 proName'>{{v.proName}} </p>  
       <p>
         <span class = 'price' >&yen;{{v.price}}</span>
         <span class = 'oldPrice'>&yen;{{v.oldPrice}}</span>

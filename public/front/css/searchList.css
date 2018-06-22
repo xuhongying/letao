@@ -11,3 +11,6 @@ font-size: 12px;
 .lt_sort li a{
 color:#666;
 }
+.lt_sort li.now a{
+  color:darkorange;
+  }

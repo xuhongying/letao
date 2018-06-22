@@ -107,6 +107,10 @@ padding-top:8px;
 .lt_product a .price{
   color: red
 }
+
+.lt_product .proName {
+  height: 39px;
+}
 .lt_product a .oldPrice{
  text-decoration: line-through
 }
