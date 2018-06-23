@@ -81,7 +81,7 @@ $('.lt_search button').on('click',function () {
     //把所有的li的now的类全部清掉
     //把所有的li下的span的箭头全部向下
     $('.lt_sort li').removeClass('now');
-    $('.lt_sort li span').removeClas('fa-angle-up').addClass('fa-angle-down');
+    $('.lt_sort li span').removeClass('fa-angle-up').addClass('fa-angle-down');
     //调用一次下拉刷新的功能
     mui('.mui-scroll-wrapper').pullRefresh().pulldownLoading();
  })
