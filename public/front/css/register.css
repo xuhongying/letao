@@ -15,3 +15,8 @@ form{
 .tips{
   font-size: 12px
 }
+.btn_vcode.disabled{
+  background-color: #666;
+ border: 1px solid #666;
+
+}

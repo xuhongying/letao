@@ -15,7 +15,7 @@
 <body>
   <div class="lt_container">
       <div class="lt_header">
-          <a class = 'icon-left' href="index.html" ><span class = 'mui-icon mui-icon-back' ></span></a>
+          <a class = 'icon-left' href="javascript:history.go(-1);" ><span class = 'mui-icon mui-icon-back' ></span></a>
           <div class = 'title' >
             <h4>注册</h4>
           </div>
@@ -23,7 +23,7 @@
        </div>
       <div class="lt_content">
         
-        <form class="">
+        <form >
             <div class="mui-input-row">
                 <input type="text" name="username" class="mui-input-clear" placeholder="请输入用户名">
               </div>
@@ -31,17 +31,18 @@
                 <input type="password" name="password" class="mui-input-password" placeholder="请输入密码">
               </div>
               <div class="mui-input-row">
-                <input type="password" name="repassword" class="mui-input-password" placeholder="请确认密码">
+                <input type="password" id = 'repass'  class="mui-input-password" placeholder="请确认密码">
               </div>
               <div class="mui-input-row">
                 <input type="text" name="mobile" class="mui-input-clear" placeholder="请输入手机号">
               </div>
            <div class="mui-input-row vcode_wrap">
               <input type="text" name="vCode" class="mui-input-clear" placeholder="请输入验证码">
-              <button class="mui-btn mui-btn-primary btn_vcode">获取验证码</button>
+              <button type = 'button' class="mui-btn mui-btn-primary btn_vcode">获取验证码</button>
+              <!-- 必须将type设置成button，这样才能阻止表单跳转， -->
             </div>
             <div class="mui-input-row">
-                <button class="mui-btn mui-btn-primary mui-block btn_register">注册</button>
+                <button type = 'button' class="mui-btn mui-btn-primary mui-block btn_register">注册</button>
               </div>
             <div class="mui-input-row tips">
               <span class="mui-pull-left">
@@ -74,8 +75,8 @@
             <p>购物车</p>
           </a>
         </li>
-        <li class='now'>
-          <a href="login.html">
+        <li >
+          <a href="user.html">
             <span class='fa fa-user'></span>
             <p>会员中心</p>
           </a>
@@ -85,7 +86,10 @@
   </div>
 
  <script src = 'lib/mui/js/mui.js' ></script>
+ <script src="lib/zepto/zepto.min.js"></script>
+ <script src="lib/artTemplate/template-web.js"></script>
  <script src = 'js/common.js' ></script>
+ <script src = 'js/register.js' ></script>
 
 
 </body>
