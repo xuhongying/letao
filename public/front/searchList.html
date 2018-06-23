@@ -102,7 +102,7 @@
     <p>没有找到相应的商品</p>
     {{else}}
     {{each data v i}}
-  <a href="#">
+  <a href="product.html?productId={{v.id}}"><!-- 点击每一个商品时进入每一个商品的详情页 -->
       <img src="{{v.pic[0].picAddr}}" alt=""> 
       <p class = 'mui-ellipsis-2 proName'>{{v.proName}} </p>  
       <p>
