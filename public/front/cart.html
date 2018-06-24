@@ -14,20 +14,30 @@
 <body>
   <div class="lt_container">
       <div class="lt_header">
-          <a class = 'icon-left' href="index.html" ><span class = 'fa fa-home' ></span></a>
+          <a class = 'icon-left' href="index.html" ><span class = 'mui-icon mui-icon-arrowleft' ></span></a>
           <div class = 'title' >
             <h4>购物车</h4>
           </div>
          
        </div>
       <div class="lt_content">
-
+          <ul id="OA_task_2" class="mui-table-view">
+             <!-- 坑 -->
+             
+            </ul>
     
          
       </div>
+      <div class="lt_total">
+        <div class = 'mui-pull-left ' >
+          订单总金额
+          <span>&yen;00:00</span>
+        </div>
+        <a href="javascript:;" class = 'mui-pull-right' >生成订单</a>
+      </div>
      <div class="lt_footer">
        <ul >
-        <li class='now'>
+        <li >
           <a href="index.html">
             <span class='fa fa-home'></span>
             <p>首页</p>
@@ -39,8 +49,8 @@
             <p>分类</p>
           </a>
         </li>
-        <li>
-          <a href="index.html">
+        <li class='now'>
+          <a href="cart.html"  >
             <span class='fa fa-shopping-cart'></span>
             <p>购物车</p>
           </a>
@@ -54,10 +64,41 @@
        </ul>
      </div>
   </div>
+<script type = 'text/html' id = 'tpl'>
+{{each rows v i}}
+  <li class="mui-table-view-cell mui-transitioning">
+      <div class="mui-slider-right mui-disabled">
+    <!-- 后面要修改和删除数据所以要存储id -->
+        <a data-id = '{{v.id}}' class="mui-btn mui-btn-blue mui-icon mui-icon-compose btn_edit" style="transform: translate(0px, 0px);"></a>
+        <a  data-id = '{{v.id}}' class="mui-btn mui-btn-red mui-icon mui-icon-trash btn_delete" style="transform: translate(-90px, 0px);"></a>
+      </div>
+      <div class="mui-slider-handle" style="transform: translate(0px, 0px);">
+        <div class="mui-table-cell">
+          <div class='cart-left'>
+            <img src="{{v.pic[0].picAddr}}" alt="">
+          </div>
+          <div class="cart-right">
+            <p class='proName mui-ellipsis-2'>{{v.proName}}</p>
+            <p class="proPrice">
+              <span class='price'>&yen;{{v.price}}</span>
+              <span class='oldPrice'>&yen;{{v.oldPrice}}</span>
+              <span class='num'>{{v.num}}双</span>
+            </p>
+            <p class='size'>鞋码：{{v.size}}</p>
+          </div>
+          <input type="checkbox">
+        </div>
+        
+      </div>
+    </li>
+{{/each}}
+</script>
 
-
- <script src = 'lib/mui/js/mui.js' ></script>
- <script src = 'js/common.js' ></script>
+<script src = 'lib/mui/js/mui.js' ></script>
+<script src = 'lib/artTemplate/template-web.js' ></script>
+<script  src = 'lib/zepto/zepto.min.js'></script>
+<script src = 'js/common.js' ></script>
+<script src = 'js/cart.js' ></script>
 
 
 </body>

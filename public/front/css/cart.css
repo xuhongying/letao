@@ -1,0 +1,63 @@
+.mui-table-cell{
+  /*框架默认的是 display: table-cell 没有宽高，也不继承*/
+  /* 这个一定要写 */
+  display: block;
+}
+.cart-left{
+  float: left;
+  margin-right: 10px;
+}
+.cart-left img{
+  display: block;
+  width: 60px;
+  height: 60px;
+}
+.cart-right .proName{
+  color: #666;
+  margin-bottom: 5px;
+  height: 42px;
+  /* 要定高，因为每个商品介绍的字可能不一样多，防止上面的字往上跑，所以定个高 */
+}
+.cart-right  .price{
+  color: red;
+}
+.cart-right .oldPrice{
+  text-decoration: line-through;
+  /* color: #ccc; */
+}
+.cart-right  .num{
+  float: right;
+  /* color: #ccc; */
+}
+.cart-right{
+  /* 左浮动右自适应 */
+  overflow: hidden;
+
+}
+.mui-table-cell input{
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  /* 父盒子默认有定位了 */
+}
+.lt_total{
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background-color: #eee;
+  border-top:1px solid #ccc;
+  font-size: 12px;
+  position: fixed;
+  bottom: 55px;
+  left: 0;
+  z-index: 99;
+  color: red;
+}
+.mui-pull-left {
+  padding-left: 10px;
+}
+.lt_total a{
+  color: #fff;
+  background-color: red;
+padding: 0 15px;
+}
