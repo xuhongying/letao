@@ -87,8 +87,10 @@ $(function () {
         }
         //如果没登录，添加失败
         if(info.error == 400){
+          console.log(location.href)
           //说明没登录,跳转到登录页面, 把当前页的地址传递到了登录页面。
           location.href = "login.html?retUrl="+location.href;
+        
         }
       }
     });
