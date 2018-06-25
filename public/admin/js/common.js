@@ -35,6 +35,8 @@ $('.child').prev().on('click',function () {
   $('.icon_menu').on('click',function () { 
     $('.lt_aside').toggleClass('now');
     $('.lt_main').toggleClass('now');
+    $('.lt_topbar').toggleClass('now');
+
    });
 
    //点击退出，显示模态框
