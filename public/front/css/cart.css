@@ -3,6 +3,9 @@
   /* 这个一定要写 */
   display: block;
 }
+.lt_container {
+  padding-bottom: 85px;
+}
 .cart-left{
   float: left;
   margin-right: 10px;
@@ -47,7 +50,7 @@
   background-color: #eee;
   border-top:1px solid #ccc;
   font-size: 12px;
-  position: fixed;
+  position: absolute;
   bottom: 55px;
   left: 0;
   z-index: 99;
@@ -60,4 +63,20 @@
   color: #fff;
   background-color: red;
 padding: 0 15px;
+}
+.proSize {
+  text-align: left;
+}
+.proSize span{
+  padding: 5px;
+  border: 1px solid #ccc;
+  line-height: 30px;
+  font-size: 12px;
+  background-color: #f5f5f5;
+}
+.proSize span.now{
+  background-color: #069;
+}
+.proNum {
+  text-align: left;
 }

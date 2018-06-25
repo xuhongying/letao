@@ -14,13 +14,15 @@
 <body>
   <div class="lt_container">
       <div class="lt_header">
-          <a class = 'icon-left' href="index.html" ><span class = 'mui-icon mui-icon-arrowleft' ></span></a>
+          <a class = 'icon-left' href="javascript:history.go(-1);" ><span class = 'mui-icon mui-icon-arrowleft' ></span></a>
           <div class = 'title' >
             <h4>购物车</h4>
           </div>
          
        </div>
       <div class="lt_content">
+          <div class="mui-scroll-wrapper">
+          <div class="mui-scroll"
           <ul id="OA_task_2" class="mui-table-view">
              <!-- 坑 -->
              
@@ -28,6 +30,8 @@
     
          
       </div>
+    </div>
+  </div>
       <div class="lt_total">
         <div class = 'mui-pull-left ' >
           订单总金额
@@ -69,7 +73,7 @@
   <li class="mui-table-view-cell mui-transitioning">
       <div class="mui-slider-right mui-disabled">
     <!-- 后面要修改和删除数据所以要存储id -->
-        <a data-id = '{{v.id}}' class="mui-btn mui-btn-blue mui-icon mui-icon-compose btn_edit" style="transform: translate(0px, 0px);"></a>
+        <a data-id = '{{v.id}}'  data-num = '{{v.num}}'  data-product-num = '{{v.productNum}}'  data-size = '{{v.size}}'  data-product-size='{{v.productSize}}' class="mui-btn mui-btn-blue mui-icon mui-icon-compose btn_edit" style="transform: translate(0px, 0px);"></a>
         <a  data-id = '{{v.id}}' class="mui-btn mui-btn-red mui-icon mui-icon-trash btn_delete" style="transform: translate(-90px, 0px);"></a>
       </div>
       <div class="mui-slider-handle" style="transform: translate(0px, 0px);">
@@ -86,7 +90,7 @@
             </p>
             <p class='size'>鞋码：{{v.size}}</p>
           </div>
-          <input type="checkbox">
+          <input type="checkbox" class = 'ck' data-price = '{{v.price}}'  data-num = '{{v.num}}'>
         </div>
         
       </div>
@@ -94,6 +98,29 @@
 {{/each}}
 </script>
 
+<script type = 'text/html' id = 'tpl2' >
+
+  <!-- 尺码 -->
+<div class="proSize p-10">
+  <strong>尺码:</strong>
+  <% 
+    var temp = productSize.split('-');
+
+   for(var i = +temp[0]; i<= temp[1];i++){
+    
+  %>
+  <span class = '{{i==size?"now":""}}' ><%= i %></span> 
+ <% } %> 
+</div>
+<div class="proNum p-10">
+  数量:
+  <div class="mui-numbox" data-numbox-min='1' data-numbox-max='{{proNum}}'><!-- 库存商品数量 -->
+    <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+    <input class="mui-numbox-input" type="number" value = '{{num}}'/> <!-- input内显示的应该是你在商品详情页选择的商品数量 -->
+    <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+  </div>
+</div>
+</script>  
 <script src = 'lib/mui/js/mui.js' ></script>
 <script src = 'lib/artTemplate/template-web.js' ></script>
 <script  src = 'lib/zepto/zepto.min.js'></script>
